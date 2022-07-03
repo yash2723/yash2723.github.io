@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Search Engine Optimization -->
+    <meta name="keywords" content="Yash Upadhyay,competitive programmer,web developer">
+    <meta name="author" content="Yash Upadhyay">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Animation -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <title>Yash Upadhyay</title>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">Yash Upadhyay</a>
+            <div class="nav-items-container">
+                <div class="nav-items">
+                    <div class="nav-close-btn"></div>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#resume">Resume</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="nav-menu-btn"></div>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="home flex-center" id="home">
+        <div class="home-container">
+            <div class="media-icons">
+                <a href="https://www.linkedin.com/in/yash-upadhyay-719aa622a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://wa.me/916355573518" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/yash.upadhyay27/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="home-intro">
+                <div class="info">
+                    <h2>Hi, 👋 I am <span style="color: var(--text-color-2);">Yash<br> Upadhyay</span></h2>
+                    <h3>
+                        <span class="animated"></span>
+                        <span class="cursor blink"></span>
+                    </h3>
+                    <a href="#about" class="btn">Know More <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <div class="home-img">
+                    <img src="images/favicon.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- <a href="#about" class="scroll-down">Scroll down <i class="fa fa-arrow-down"></i></a> -->
+    </section>
+    <script>
+
+        var animatedspan = document.querySelector('.animated');
+        var cursor = document.querySelector('.cursor');
+
+        var words = ['Competitive Programmer.', 'Web Developer.', 'Software Developer.'];
+        var typingdelay = 200;
+        var erasingdelay = 100;
+        var newtextdelay = 2000;
+        var wordsindex = 0;
+        var charindex = 0;
+
+        function type() {
+            if (charindex < words[wordsindex].length) {
+                if (cursor.classList.contains('blink')) {
+                    cursor.classList.remove('blink');
+                }
+                animatedspan.textContent += words[wordsindex].charAt(charindex);
+                charindex++;
+                setTimeout(type, typingdelay);
+            }
+            else {
+                cursor.classList.add('blink');
+                setTimeout(erase, newtextdelay);
+            }
+        }
+        function erase() {
+            if (charindex > 0) {
+                if (cursor.classList.contains('blink')) {
+                    cursor.classList.remove('blink');
+                }
+                animatedspan.textContent = words[wordsindex].substring(0, charindex - 1);
+                charindex--;
+                setTimeout(erase, erasingdelay);
+            }
+            else {
+                cursor.classList.add('blink');
+                wordsindex++;
+                if (wordsindex >= words.length) {
+                    wordsindex = 0;
+                }
+                setTimeout(type, typingdelay);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(type, newtextdelay);
+        });
+    </script>
+
+    <!-- Scroll to Top button -->
+    <div class="scroll-to-top-btn flex-center">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Light/Dark theme button -->
+    <div class="theme-btn flex-center">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </div>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container flex-center">
+            <h1 class="section-title-1">About</h1>
+            <h2 class="section-title-2">About</h2>
+            <div class="content flex-center">
+                <div class="about-img">
+                    <img src="images/profile-img.jpeg" alt="">
+                </div>
+                <div class="about-info">
+                    <div class="description">
+                        <h3>Yash Upadhyay</h3>
+                        <h4>Information Technology Student</h4>
+                        <p> 
+                            Hey there, I am currently pursuing B.Tech Information Technology from Dharmsinh Desai University. I love to exploring new technologies and frameworks. Innovative tech mind with have tried my hands on C++ , Data Structure and Algorithms , HTML , CSS , Javascript , PHP. I am looking to continue developing my skills by working with new people who are enthusiastic about advanced technology.  
+                        </p>
+                    </div>
+                    <a href="#contact" class="btn">Let's Connect <i class="fa-solid fa-link"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume section" id="resume">
+        <div class="container flex-center">
+            <h1 class="section-title-1">Resume</h1>
+            <h2 class="section-title-2">Resume</h2>
+            <div class="content">
+                <div class="resume-description">
+                    <h3>Education & Skills</h3>
+                    <p>
+
+                    </p>
+                </div>
+                <div class="skills-info education-all">
+                    <div class="education">
+                        <h4><label>Education</label></h4>
+                        <ul class="edu-list">
+                            <li class="item">
+                                <span class="name">Dharmsinh Desai University</span>
+                                <p>B.Tech in Information Technology</p>
+                                <span class="year">2021 - Present</span>
+                            </li>
+                            <li class="item">
+                                <span class="name">The Maharaja Sayajirao University</span>
+                                <p>Diploma in Computer Engineering</p>
+                                <span class="year">2018 - 2021</span>
+                            </li>
+                            <li class="item">
+                                <span class="name">Utkarsh Vidhyalaya</span>
+                                <p>Secondary Education</p>
+                                <span class="year">2016 - 2018</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="education">
+                        <h4><label>Skills</label></h4>
+                        <ul class="bars">
+                            <li class="bar">
+                                <div class="info">
+                                    <span>C++</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="line cpp"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>Python</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="line python"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>Git & Github</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="line git"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>HTML</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="line html"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>CSS</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="line css"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>Javascript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="line js"></div>
+                            </li>
+                            <li class="bar">
+                                <div class="info">
+                                    <span>PHP</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="line php"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-description">
+                    <h3>Coding Profiles</h3>
+                </div>
+                <div class="coding-profile">
+                    <div class="profile-card">
+                        <a href="https://www.codechef.com/users/yash2723" target="_blank">
+                            <div class="sub-profile-card codechef">
+                                <div class="profile-img">
+                                    <img src="images/codechef.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="profile-card">
+                        <a href="https://codeforces.com/profile/yash2723" target="_blank">
+                            <div class="sub-profile-card codeforces">
+                                <div class="profile-img">
+                                    <img src="images/codeforces.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="profile-card">
+                        <a href="https://leetcode.com/yash2723/" target="_blank">
+                            <div class="sub-profile-card leetcode">
+                                <div class="profile-img">
+                                    <img src="images/leetcode.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="profile-card">
+                        <a href="https://github.com/yash2723" target="_blank">
+                            <div class="sub-profile-card github">
+                                <div class="profile-img">
+                                    <img src="images/github.png" alt="">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section class="section projects" id="projects">
+        <div class="container flex-center">
+            <h1 class="section-title-1">Projects</h1>
+            <h2 class="section-title-2">Projects</h2>
+            <div class="content">
+                <div class="projects-list">
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Job-Enrollment-System" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Job Enrollment System</h3>
+                                    <span>HTML , CSS , Javascript , PHP</span>
+                                </div>
+                                <img src="images/job-enrollment-system.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Todo-List" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>To Do List</h3>
+                                    <span>HTML , CSS , Javascript , PHP</span>
+                                </div>
+                                <img src="images/todo-list.jpg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Clinic-Website" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Clinic Website</h3>
+                                    <span>HTML , CSS , Javascript , React</span>
+                                </div>
+                                <img src="images/clinic-website.webp" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Snake-Game" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Snake Game</h3>
+                                    <span>Python</span>
+                                </div>
+                                <img src="images/snake-game.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Typing-Master-Game" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Typing Master Game</h3>
+                                    <span>Python</span>
+                                </div>
+                                <img src="images/typing-master-game.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="img-card-container">
+                        <a href="https://github.com/yash2723/Tic-Tac-Toe-Game" target="_blank">
+                            <div class="img-card">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h3>Tic-Tac-Toe Game</h3>
+                                    <span>Python</span>
+                                </div>
+                                <img src="images/tic-tac-toe-game.webp" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container flex-center">
+            <h1 class="section-title-1">Contact Me</h1>
+            <h2 class="section-title-2">Contact Me</h2>
+            <div class="content">
+                <div class="contact-left">
+                    <h2>Let's get in touch!</h2>
+                    <ul class="contact-list">
+                        <li>
+                            <h3 class="item-title"><i class="fas fa-phone"></i> <span><a href="tel:+91 6355573518" target="_blank">+91 6355573518</a></span></h3>
+                        </li>
+                        <li>
+                            <h3 class="item-title"><i class="fas fa-envelope"></i> <span><a href="mailto:yash.upadhyay.2723@gmail.com" target="_blank">yash.upadhyay.2723@gmail.com</a></span></h3>
+                            
+                        </li>
+                        <li>
+                            <h3 class="item-title"><i class="fas fa-map-marker-alt"></i> <span>Vadodara, Gujarat, India</span></h3>
+                            
+                        </li>
+                        <li>
+                            <h3 class="item-title"><i class="fa-brands fa-linkedin"></i> <span><a href="https://www.linkedin.com/in/yash-upadhyay-719aa622a/" target="_blank">Linkdin</a></span></h3>
+                        </li>
+                        <li>
+                            <h3 class="item-title"><i class="fa-brands fa-instagram"></i> <span><a href="https://www.instagram.com/yash.upadhyay27/" target="_blank">Instagram</a></span></h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-right">
+                    <p>Fill the below form. <br>
+                    I'll reach out to you as soon as possible.</p>
+                    <form action="" class="contact-form">
+                        <div class="first-row">
+                            <input type="text" name="" id="" placeholder="Enter your name">
+                        </div>
+                        <div class="second-row">
+                            <input type="email" name="" id="" placeholder="Enter your email">
+                            <input type="text" name="" id="" placeholder="Subject">
+                        </div>
+                        <div class="third-row">
+                            <textarea name="message" id="" cols="30" rows="7" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button class="btn" type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="copyright">Copyright &copy; 2022 All rights reserved | This template is made with ❤ by <span>Yash Upadhyay</span></p>
+    </footer>
+
+
+</body>
+<script src="script.js"></script>
+</html>
